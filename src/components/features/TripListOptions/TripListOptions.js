@@ -9,12 +9,12 @@ class TripListOptions extends React.Component {
     const tagsList = this.props.filters.tags;
 
     if(!tagsList.includes(tag)) {
-      console.log('Adding tag', tag);
+      // console.log('Adding tag', tag);
       tagsList.push(tag);
       // TODO - use action dispatcher from props
       this.props.addTags(tagsList);
     } else {
-      console.log('Removing tag', tag);
+      // console.log('Removing tag', tag);
       const tagIndex = tagsList.indexOf(tag);
       tagsList.splice(tagIndex, 1);
 
