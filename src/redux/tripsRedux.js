@@ -44,6 +44,7 @@ export const getTripsForCountry = ({trips}, countryCode) => {
   return filteredTrips;
 };
 
+
 /* ACTIONS */
 /*
 // action name creator
