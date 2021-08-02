@@ -5,13 +5,18 @@ import PropTypes from 'prop-types';
 import pricing  from '../../../data/pricing.json';
 import OrderOption from '../OrderOption/OrderOption';
 
+
 class OrderForm extends React.Component{
 render(){
     return(
         <Row>
             {pricing.map(option => (
                 <Col md={4} key={option.id}>
-                    <OrderOption {...option} />
+                    <OrderOption
+                        currentValue = {this.props.options[option.id]}
+                        setOrderOption = {this.props.setOrderOption}
+                        {...option}
+                    />
                 </Col>
             ))}
             <Col xs={12}>
@@ -25,6 +30,7 @@ render(){
 
 OrderForm.propTypes = {
     options: PropTypes.object,
+    setOrderOption: PropTypes.func,
 }
 
 export default OrderForm;
