@@ -9,41 +9,39 @@ import OrderOptionDate from './OrderOptionDate';
 import OrderOptionText from './OrderOptionText';
 
 const optionTypes = {
-    dropdown: OrderOptionDropdown,
-    icons: OrderOptionIcons,
-    number: OrderOptionNumber,
-    checkboxes: OrderOptionCheckboxes,
-    date: OrderOptionDate,
-    text: OrderOptionText,
+  dropdown: OrderOptionDropdown,
+  icons: OrderOptionIcons,
+  number: OrderOptionNumber,
+  checkboxes: OrderOptionCheckboxes,
+  date: OrderOptionDate,
+  text: OrderOptionText,
 };
 
 const OrderOption = ({id, setOrderOption, name, type, ...otherProps}) => {
-    const OptionComponent = optionTypes[type];
-    if(!OptionComponent){
-        return null;
-    } else {
-        return (
-            <div className={styles.component}>
-                <h3 className={styles.title}>
-                    {name}
-                </h3>
-                <OptionComponent
-                    {...otherProps}
-                    setOptionValue = {value => setOrderOption({[id]: value})}
-                />
-            </div>
-        );
-    }
+  const OptionComponent = optionTypes[type];
+  if(!OptionComponent){
+    return null;
+  } else {
+    return (
+      <div className={styles.component}>
+        <h3 className={styles.title}>
+          {name}
+        </h3>
+        <OptionComponent
+          {...otherProps}
+          setOptionValue = {value => setOrderOption({[id]: value})}
+        />
+      </div>
+    );
+  }
 };
 
 
 OrderOption.propTypes = {
-    option: PropTypes.object,
-    id: PropTypes.string,
-    setOrderOption: PropTypes.func,
-    name: PropTypes.string,
-    otherProps: PropTypes.object,
-}
+  id: PropTypes.string,
+  setOrderOption: PropTypes.func,
+  name: PropTypes.string,
+};
 
 
 export default OrderOption;
