@@ -130,10 +130,25 @@ for(let type in optionTypes){
 
         it('should run setOrderOption on click', () => {
           renderedSubcomponent.find('.icon').at(2).simulate('click');
-          console.log(renderedSubcomponent.find('.icon').at(2).debug());
           expect(mockSetOrderOption).toBeCalledTimes(1);
           expect(mockSetOrderOption).toBeCalledWith( {[mockProps.id]: mockProps.values[1].id} );
         });
+
+        break;
+      }
+
+      case 'checkboxes': {
+        it('contains input with checkbox type', () => {
+          const checkboxInputs = renderedSubcomponent.find('input[type="checkbox"]');
+          expect(checkboxInputs.length).toBe(2);
+        });
+
+        it('should run setOrderOption on click', () => {
+          renderedSubcomponent.find(`input[value="${testValue}"]`).simulate('change', {currentTarget: {checked: true}});
+          expect(mockSetOrderOption).toBeCalledTimes(1);
+          expect(mockSetOrderOption).toBeCalledWith( {[mockProps.id]: [mockProps.currentValue, testValue]});
+        });
+        break;
       }
     }
   });
