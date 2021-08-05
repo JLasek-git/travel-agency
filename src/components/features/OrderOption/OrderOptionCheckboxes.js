@@ -5,8 +5,8 @@ import { formatPrice } from '../../../utils/formatPrice';
 
 const newValueSet = (currentValue, id, checked) => {
   if(checked){
-    console.log('ID: ', id);
-    console.log('checked: ', checked);
+    // console.log('ID: ', id);
+    // console.log('checked: ', checked);
     return [
       ...currentValue,
       id,
