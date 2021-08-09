@@ -1,3 +1,21 @@
 {
-  "orders": []
+  "orders": [
+    {
+      "car-rental": "suv",
+      "accommodation": "suite",
+      "features": [
+        "all-inclusive"
+      ],
+      "adults": "2",
+      "children": 0,
+      "name": "Jakub",
+      "contact": "12321321",
+      "start-date": "2021-08-14T22:00:00.000Z",
+      "totalCost": "$60,438",
+      "tripId": "5cc1d10181a30e85c8d9ad4a",
+      "tripName": "Pleasant trek in outstanding Togo",
+      "tripCountryCode": "TGO",
+      "id": 1
+    }
+  ]
 }

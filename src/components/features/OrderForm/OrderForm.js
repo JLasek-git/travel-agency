@@ -9,31 +9,43 @@ import settings from '../../../data/settings';
 import { formatPrice } from '../../../utils/formatPrice';
 import { calculateTotal } from '../../../utils/calculateTotal';
 
-const sendOrder = (options, tripCost) => {
-  const totalCost = formatPrice(calculateTotal(tripCost, options));
+const sendOrder = (options, tripCost, tripId, tripName, tripCountryCode) => {
+  if(options.name != '' && options.contact != ''){
+    const totalCost = formatPrice(calculateTotal(tripCost, options));
 
-  const payload = {
-    ...options,
-    totalCost,
-  };
+    console.log(options);
 
-  const url = settings.db.url + '/' + settings.db.endpoint.orders;
+    const payload = {
+      ...options,
+      totalCost,
+      tripId,
+      tripName,
+      tripCountryCode,
+    };
 
-  const fetchOptions = {
-    cache: 'no-cache',
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(payload),
-  };
 
-  fetch(url, fetchOptions)
-    .then(function(response){
-      return response.json();
-    }).then(function(parsedResponse){
-      console.log('parsedResponse', parsedResponse);
-    });
+
+    const url = settings.db.url + '/' + settings.db.endpoint.orders;
+
+    const fetchOptions = {
+      cache: 'no-cache',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    };
+
+    fetch(url, fetchOptions)
+      .then(function(response){
+        return response.json();
+      }).then(function(parsedResponse){
+        console.log('parsedResponse', parsedResponse);
+      });
+
+  } else {
+    alert('In order to submit you have to add your name and contact');
+  }
 };
 class OrderForm extends React.Component {
   render() {
@@ -54,7 +66,7 @@ class OrderForm extends React.Component {
             options={this.props.options}
           />
         </Col>
-        <Button onClick={() => sendOrder(this.props.options, this.props.tripCost)}>Order now!</Button>
+        <Button onClick={() => sendOrder(this.props.options, this.props.tripCost, this.props.tripId, this.props.tripName, this.props.tripCountryCode)}>Order now!</Button>
       </Row>
     );
   }
@@ -63,7 +75,10 @@ class OrderForm extends React.Component {
 OrderForm.propTypes = {
   options: PropTypes.object,
   setOrderOption: PropTypes.func,
-  tripCost: PropTypes.number,
+  tripCost: PropTypes.string,
+  tripId: PropTypes.string,
+  tripName: PropTypes.string,
+  tripCountryCode: PropTypes.string,
 };
 
 export default OrderForm;
