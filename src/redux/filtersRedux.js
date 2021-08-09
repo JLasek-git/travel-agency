@@ -54,7 +54,7 @@ export default function reducer(statePart = [], action = {}) {
       return{
         ...statePart,
         tags: action.payload,
-      }
+      };
     default:
       return statePart;
   }

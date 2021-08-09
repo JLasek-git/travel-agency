@@ -5,7 +5,7 @@ import styles from './TripListOptions.module.scss';
 import {Row, Col} from 'react-flexbox-grid';
 
 class TripListOptions extends React.Component {
-  handleTags(tag, checked){
+  handleTags(tag){
     const tagsList = this.props.filters.tags;
 
     if(!tagsList.includes(tag)) {
@@ -87,6 +87,9 @@ TripListOptions.propTypes = {
   tags: PropTypes.object,
   filters: PropTypes.object,
   changeSearchPhrase: PropTypes.func,
+  addTags: PropTypes.func,
+  changeTripDurationFrom: PropTypes.func,
+  changeTripDurationTo: PropTypes.func,
 };
 
 export default TripListOptions;
