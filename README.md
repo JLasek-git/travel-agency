@@ -1,3 +1,6 @@
+If there's any problem with "npm install" just delete package-lock.json before npm install.
+     
+     
      For this project, I created: 
       - Unit tests
       - Forms in trip view, and price calculation which depends on chosen options
