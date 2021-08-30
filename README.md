@@ -1,3 +1,9 @@
+    To start this
+          git clone https://github.com/JLasek-git/travel-agency.git
+          cd travel-agency
+          npm install
+          npm run start
+
 If there's any problem with "npm install" just delete package-lock.json before npm install.
      
      
