@@ -1,3 +1,13 @@
+     For this project, I created: 
+      - Unit tests
+      - Forms in trip view, and price calculation which depends on chosen options
+      - Trips list filters
+      - Rendering trips list and regions
+      - Adding routing to proper trip which depends on dynamic rout param.
+      
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
