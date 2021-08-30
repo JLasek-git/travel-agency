@@ -3,7 +3,7 @@
       - Forms in trip view, and price calculation which depends on chosen options
       - Trips list filters
       - Rendering trips list and regions
-      - Adding routing to proper trip which depends on dynamic rout param.
+      - Added routing to proper trip which depends on dynamic rout param.
       
 
 
