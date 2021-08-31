@@ -14,6 +14,12 @@ If there's any problem with "npm install" just delete package-lock.json before n
       - Rendering trips list and regions
       - Added routing to proper trip which depends on dynamic rout param.
       
+### QUICK LOOK ###
+![TravelAgency1](https://user-images.githubusercontent.com/84036777/131423696-3e7ad359-cb8d-4368-8794-b2c90639d92f.PNG)
+![TravelAgency2](https://user-images.githubusercontent.com/84036777/131423748-42b38f1a-aed3-4fba-9300-c5136c7e43d0.PNG)
+![TravelAgency3](https://user-images.githubusercontent.com/84036777/131423830-5401425c-ed70-48e7-8665-15b3bea40e19.PNG)
+![TravelAgency4](https://user-images.githubusercontent.com/84036777/131423833-ff7ac901-4176-4f58-aff6-a4925a14160c.PNG)
+
 
 
 
